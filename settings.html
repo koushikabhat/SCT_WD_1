@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setting</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="home" class="common-section main">
+        <img src="./images/mainbg.jpg" alt="">
+         
+    
+        <div class="navbardiv">
+            <nav class="nav">
+                <ul>
+                    <li>
+                        <a href="./index.html">
+                            <span class="icon"><ion-icon class="iconimg" name="home-outline"></ion-icon></span>
+                            <span class="text">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./profile.html">
+                            <span class="icon"><ion-icon class="iconimg" name="person-circle-outline"></ion-icon></span>
+                            <span class="text">Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./contact.html">
+                            <span class="icon"><ion-icon class="iconimg" name="call-outline"></ion-icon></span>
+                            <span class="text">Contact</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./settings.html">
+                            <span class="icon"><ion-icon class="iconimg" name="settings-outline"></ion-icon></span>
+                            <span class="text">Setting</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="div2">This is a setting page</div>
+        <span class="secspan">This web design shows the interactive and responsive navigation bar menue </span>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        //when the dom contents gets load 
+        //querry selector all is used to select multiple elements
+
+        document.addEventListener("DOMContentLoaded", function(){
+
+           
+            const navlinkArray = document.querySelectorAll(".nav ul li a");
+
+            let activePage = localStorage.getItem("activePage")
+
+
+            navlinkArray.forEach(link => {
+                if(link.href === activePage)
+                {
+                        link.classList.add("active")
+                }
+                
+                //when clicked 
+                link.addEventListener("click",function(){
+                    //remove the active class 
+                    navlinkArray.forEach(link => link.classList.remove("active"))
+
+                    //add the active to clicked link
+                    this.classList.add("active")
+
+                    //save the clicked link
+                    localStorage.setItem("activePage", this.href)
+
+                })
+            });
+        });
+    </script>
+</body>
+</html>

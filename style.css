@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+.navbardiv {
+    
+
+    position: fixed;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    /* background: #2a2828; */
+    background-color: rgb(2, 2, 2, 0.3);
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 2px solid #7b7979;
+    border: 1px solid rgb(0, 0, 0);
+    /* border-radius: 20px; */
+    z-index: 1000;
+    
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav ul {
+    display: flex;
+    gap: 150px; 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li {
+    text-align: center;
+}
+
+.nav ul li a {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    transition: color 0.3s ease-out;
+}
+
+.nav ul li a:hover {
+    color: #f70202;
+}
+
+
+/* Icon Styling */
+.iconimg {
+    height: 30px;
+    width: 30px;
+    font-size: 24px; 
+    margin-top: 13px;
+    margin-bottom: 8px; 
+    transition: transform 0.2s ease-in-out; 
+}
+
+
+.nav ul li a:hover .iconimg {
+    height:35px ;
+    width: 35px;
+    transform: translateY(-8px); /* here the - is up/left and + down/right translatey similally translatex means on left and right  */
+}
+
+
+@media (max-width: 768px) {
+    .nav ul {
+        gap: 20px;
+    }
+    .iconimg {
+        font-size: 20px;
+    }
+    .nav ul li a {
+        font-size: 12px;
+    }
+}
+
+
+/* designing the main  */
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 110px;
+    height: 500px;
+    /* border: 2px solid #252323; */
+    margin-bottom: 6px;
+    font-size: 30px;
+}
+
+img{
+    display: block;
+    height: 800px;
+    width: 100%;
+}
+
+.secspan{
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+}
+.div2{
+    position: absolute;
+    top: 290px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* //adding active class  */
+.nav ul li a.active{
+    color: #f70202;
+    font-weight: bolder ;
+}
+
+
